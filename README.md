@@ -4,13 +4,7 @@ A simple set of python scripts too measure and visualize your internet connectio
 
 ## Dependencies
 
-For non Docker usage:
-
-- speedtest (from [speedtest.cli](https://github.com/sivel/speedtest-cli))
-- pandas
-- matplotlib
-
-For Docker usage of course Docker :)
+- Docker :)
 
 ## Build
 
