@@ -6,20 +6,15 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
 
-def main():
-    create_plot()
-
-
 def create_plot():
-    df = read_data()
-    #  make_plot_file(df, 'download')
-    #  make_plot_file(df, 'upload')
-    make_plot_file(df)
+    df = _read_data()
+    _make_plot_file(df)
 
 
-def read_data():
+def _read_data():
+    """Read the measurements from speedtest.log and returns a pandas dataframe"""
     df = pd.io.parsers.read_csv(
-        'speedtest.log',
+        '/results/speedtest.log',
         names='date time ping download upload'.split(),
         header=None,
         sep=r'\s+',
@@ -34,7 +29,8 @@ def read_data():
     return df
 
 
-def make_plot_file(input):
+def _make_plot_file(input):
+    """Creates a plot of the download and upload bandwidth"""
     rcParams['xtick.labelsize'] = 'xx-small'
     #  plt.plot(input['timestamp'], input[column].to_numpy())
     plt.title('Bandwidth')
@@ -51,8 +47,4 @@ def make_plot_file(input):
 
     current_figure = plt.gcf()
     current_figure.subplots_adjust(bottom=.25)
-    current_figure.savefig('{}.png'.format('bandwidth'))
-
-
-if __name__ == '__main__':
-    main()
+    current_figure.savefig('/results/{}.png'.format('bandwidth'))

@@ -4,29 +4,36 @@ A simple set of python scripts too measure and visualize your internet connectio
 
 ## Dependencies
 
+For non Docker usage:
+
 - speedtest (from [speedtest.cli](https://github.com/sivel/speedtest-cli))
 - pandas
 - matplotlib
 
+For Docker usage of course Docker :)
+
+## Build
+
+docker build . -t vis
+
 ## Collect Data
 
-Run 'log_netspeed.py'. This will test every 60 seconds your bandwidth and log the result to `speedtest.log`
-
-For a realistic result do not run any other apps/devices utilizing your internet connection during the tests.
+Run `docker run ${PWD}/results:/results vis test`
 
 ## Visual Data
 
-Run `read_logdata.py`. This will read `speedtest.log` and calculate some statistics and generate a graph `bandwidth.log`
+Run `docker run ${PWD}/results:/results vis plot`
 
-## Example
+## Examples
 
-![example](./bandwidth.png)
+![Data](https://repo.rootknecht.net/open/vis-bandwidth/raw/master/results/speedtest.log)
+
+![Plot](./results/bandwidth.png)
 
 ## Todo
 
-- docstrings
 - advanced plotting!
-- containerization
+- non docker doc
 - formated output of calculated values
 - external configuration
 - Graph for Ping
