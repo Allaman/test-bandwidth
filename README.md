@@ -1,4 +1,4 @@
-A simple set of python scripts to measure and visualize your internet connection.
+A simple set of python scripts too measure and visualize your internet connection.
 
 [Little background](https://knowledge.rootknecht.net/testing-internet-connection)
 
