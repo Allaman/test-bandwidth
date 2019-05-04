@@ -8,7 +8,7 @@ A simple set of python scripts too measure and visualize your internet connectio
 
 ## Build
 
-docker build . -t vis
+Run `docker build . -t vis`
 
 ## Collect Data
 

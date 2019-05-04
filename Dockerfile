@@ -16,5 +16,5 @@ RUN pip install --user --no-cache-dir --no-warn-script-location -r requirements.
 
 WORKDIR $INSTALL_DIR/vis-bandwidth
 
-ENTRYPOINT [ "python", "./main.py", "--cmd" ]
+ENTRYPOINT [ "python", "-u", "./main.py", "--cmd" ]
 CMD [ ]
