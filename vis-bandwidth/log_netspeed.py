@@ -15,6 +15,7 @@ def start_testing():
         ping = download = upload = None
         ping, download, upload = _get_results()
         logging.info("%5.1f %5.1f %5.1f", ping, download, upload)
+        print("Waiting for next measurement...")
         time.sleep(INTERVALL)
 
 
@@ -31,6 +32,8 @@ def _setup_logging():
 def _get_results():
     """Run speedtest with speedtest.py"""
     s = speedtest.Speedtest()
+    print("Testing download..")
     s.download()
+    print("Testing upload..")
     s.upload()
     return s.results.ping, s.results.download, s.results.upload
