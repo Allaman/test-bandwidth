@@ -11,18 +11,24 @@ When using without Docker see `setup.py` for Python dependencies.
 ## Build
 
 `git clone https://repo.rootknecht.net/open/vis-bandwidth.git`
+
 `cd vis-bandwidth`
+
 `docker build . -t vis`
 
 ## Collect Data
 
 `docker run -v $PWD/:/app vis test`
 
+or
+
 `cd vis-bandwidth && python main.py --cmd test`
 
 ## Visual Data
 
 `docker run -v $PWD/:/app vis plot`
+
+or
 
 `cd vis-bandwidth && python main.py --cmd plot`
 
