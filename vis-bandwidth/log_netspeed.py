@@ -4,12 +4,13 @@ import speedtest
 import logging
 import time
 
-LOG_FILE = '/results/speedtest.log'
+LOG_FILE = '../results/speedtest.log'
 INTERVALL = 60
 
 
 def start_testing():
     """Infinite loop executing speedtest every $INTERVAL"""
+    print("Start testing...")
     _setup_logging()
     while True:
         ping = download = upload = None

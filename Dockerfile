@@ -1,8 +1,8 @@
 FROM python:slim
 
-ENV INSTALL_DIR /var/opt/app/
+ENV INSTALL_DIR /app
 
-RUN mkdir $INSTALL_DIR mkdir
+RUN mkdir $INSTALL_DIR
 
 COPY . $INSTALL_DIR
 

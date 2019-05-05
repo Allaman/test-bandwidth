@@ -1,6 +1,8 @@
 vis-bandwidth/__pycache__/
-results/
 speedtest.log
 bandwidth.png
 Dockerfile
 README.md
+LICENSE
+.gitignore
+CHANGELOG

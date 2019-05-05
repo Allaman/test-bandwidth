@@ -6,17 +6,25 @@ A simple set of python scripts too measure and visualize your internet connectio
 
 - Docker :)
 
+When using without Docker see `setup.py` for Python dependencies.
+
 ## Build
 
-Run `docker build . -t vis`
+`git clone https://repo.rootknecht.net/open/vis-bandwidth.git`
+`cd vis-bandwidth`
+`docker build . -t vis`
 
 ## Collect Data
 
-Run `docker run ${PWD}/results:/results vis test`
+`docker run -v $PWD/:/app vis test`
+
+`cd vis-bandwidth && python main.py --cmd test`
 
 ## Visual Data
 
-Run `docker run ${PWD}/results:/results vis plot`
+`docker run -v $PWD/:/app vis plot`
+
+`cd vis-bandwidth && python main.py --cmd plot`
 
 ## Examples
 
@@ -27,7 +35,6 @@ Run `docker run ${PWD}/results:/results vis plot`
 ## Todo
 
 - advanced plotting!
-- non docker doc
 - formated output of calculated values
 - external configuration
 - Graph for Ping

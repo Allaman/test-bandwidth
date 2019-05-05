@@ -14,18 +14,18 @@ def create_plot():
 def _read_data():
     """Read the measurements from speedtest.log and returns a pandas dataframe"""
     df = pd.io.parsers.read_csv(
-        '/results/speedtest.log',
+        '../results/speedtest.log',
         names='date time ping download upload'.split(),
         header=None,
         sep=r'\s+',
         parse_dates={'timestamp': [0, 1]},
     )
-    print("Download Max [bit/s]:", round(df['download'].max()))
-    print("Upload Max [bit/s]:", round(df['upload'].max()))
-    print("Download Mean [bit/s]:", round(df['download'].mean()))
-    print("Upload Mean [bit/s]:", round(df['upload'].mean()))
-    print("Download Median [bit/s]:", round(df['download'].median()))
-    print("Upload Median [bit/s]:", round(df['upload'].median()))
+    print("Download Max [Mbit/s]:", round(df['download'].max()/1e+6, 2))
+    print("Upload Max [Mbit/s]:", round(df['upload'].max()/1e+6, 2))
+    print("Download Mean [Mbit/s]:", round(df['download'].mean()/1e+6, 2))
+    print("Upload Mean [Mbit/s]:", round(df['upload'].mean()/1e+6, 2))
+    print("Download Median [Mbit/s]:", round(df['download'].median()/1e+6, 2))
+    print("Upload Median [Mbit/s]:", round(df['upload'].median()/1e+6, 2))
     return df
 
 
@@ -40,11 +40,11 @@ def _make_plot_file(input):
     ax.yaxis.set_view_interval(0, 100000000)
     ax2.yaxis.set_view_interval(0, 100000000)
     ax.figure.legend()
-    plt.ylabel('MBps')
+    plt.ylabel('bits/s')
     plt.xlabel('Timestamp')
 
     plt.grid()
 
     current_figure = plt.gcf()
     current_figure.subplots_adjust(bottom=.25)
-    current_figure.savefig('/results/{}.png'.format('bandwidth'))
+    current_figure.savefig('../results/{}.png'.format('bandwidth'))
