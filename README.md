@@ -34,7 +34,7 @@ or
 
 ## Examples
 
-[Data][./results/speedtest.log)
+[Data](./results/speedtest.log)
 
 ![Plot](./results/bandwidth.png)
 
