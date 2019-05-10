@@ -34,7 +34,7 @@ or
 
 ## Examples
 
-![Data](https://repo.rootknecht.net/open/vis-bandwidth/raw/master/results/speedtest.log)
+[Data][./results/speedtest.log)
 
 ![Plot](./results/bandwidth.png)
 
