@@ -24,9 +24,9 @@ with open('VERSION') as version_file:
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'pandas==0.24.2',
-    'matplotlib==3.0.3',
-    'pyyaml==5.1',
+    'pandas==1.2.3',
+    'matplotlib==3.4.1',
+    'pyyaml==5.4',
     'speedtest-cli==2.1.1'
 ]
 
